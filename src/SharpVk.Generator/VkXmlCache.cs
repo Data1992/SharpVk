@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Xml.Linq;
 
 namespace SharpVk.Generator
@@ -35,9 +36,10 @@ namespace SharpVk.Generator
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(tempFile));
 
-                    var vkXmlRequest = WebRequest.Create("https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/master/xml/vk.xml");
+                    var client = new HttpClient();
+                    var response = client.GetAsync("https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml");
 
-                    using (var vkXmlResponse = vkXmlRequest.GetResponseAsync().Result)
+                    using (var vkXmlResponse = response.Result)
                     {
                         if (File.Exists(tempFile))
                         {
@@ -46,7 +48,7 @@ namespace SharpVk.Generator
 
                         using (var fileStream = File.OpenWrite(tempFile))
                         {
-                            vkXmlResponse.GetResponseStream().CopyTo(fileStream);
+                            vkXmlResponse.Content.ReadAsStream().CopyTo(fileStream);
                         }
                     }
                 }
