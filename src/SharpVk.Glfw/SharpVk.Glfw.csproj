@@ -2,13 +2,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Version>0.0.0</Version>
     <Authors>FacticiusVir</Authors>
     <Company />
     <Product />
     <Description>GLFW3 Bindings for C# with Vulkan support via SharpVk</Description>
-    <Copyright>Copyright 2020 Andrew Armstrong/FacticiusVir</Copyright>
+    <Copyright>Copyright 2020 Andrew Armstrong/FacticiusVir
+Copyright 2022 Marc Dannemann/Data1992</Copyright>
     <PackageTags>Vulkan SharpVk Glfw 3D</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://github.com/FacticiusVir/SharpVk/blob/master/LICENSE</PackageLicenseUrl>
@@ -18,16 +19,16 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\netstandard2.1\</OutputPath>
-    <DocumentationFile>bin\Release\netstandard2.1\SharpVk.Glfw.xml</DocumentationFile>
+    <OutputPath>bin\Release\net6.0\</OutputPath>
+    <DocumentationFile>bin\Release\net6.0\SharpVk.Glfw.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Debug\netstandard2.1\SharpVk.Glfw.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net6.0\SharpVk.Glfw.xml</DocumentationFile>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DefineConstants>TRACE;DEBUG;NETSTANDARD2_1</DefineConstants>
-    <OutputPath>bin\Debug\netstandard2.1\</OutputPath>
+    <OutputPath>bin\Debug\net6.0\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
